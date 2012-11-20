@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en" ng-app="slidedeck" ng-controller="DeckCtrl" ng-cloak>
+	<head>
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<!-- Title -->
+		<title>{{ title }}</title>
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="lib/prism/prism.css" />
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/slidedeck.css" />
+	</head>
+	
+	<body>
+		
+		<div class="slide title">
+			<h1>Teach Your Browser New Tricks</h1>
+			<div class="logo">AngularJS</div>
+			<div class="author">Brett LaForge (<a href="http://brettlaforge.com">brettlaforge.com</a>)</div>
+		</div>
+		
+		<div class="slide">
+			<h2>Problem</h2>
+			<div class="center">
+				<p>Web Applications are:</p>
+				<img src="img/notfile.png">
+				<h3>NOT DOCUMENTS</h3>
+			</div>
+			<span class="notes">
+				What the browser would have been if it were built for web applications.
+				The browser was built for displaying html pages and the whole web application idea is an afterthought.
+				Why are web applications so hard to build?
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>History</h2>
+			<div class="center">
+				<img src="img/history01.png">
+				<h3>1989 - HTML</h3>
+			</div>
+			<ul>
+				<li>Static Pages Only</li>
+				<li>Hyperlinks Only</li>
+			</ul>
+			<span class="notes">
+				Scientists wanted to share information over the network.
+				So a markup language was used to present the information in a standard way.
+				Sharing Static Content.
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>History</h2>
+			<div class="center">
+				<img src="img/history02.png">
+				<h3>1995 - JavaScript</h3>
+			</div>
+			<ul>
+				<li>Form Validation</li>
+				<li>Small Interactions</li>
+			</ul>
+			<span class="notes">
+				Form Validation.
+				Small Interactions.
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>History</h2>
+			<div class="center">
+				<img src="img/history03.png">
+				<h3>2005 - First Web Apps</h3>
+			</div>
+			<ul>
+				<li>Amazing Interactions</li>
+				<li>Asynchronous Requests</li>
+			</ul>
+			<span class="notes">
+				Google Mail, Google Maps
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>History</h2>
+			<div class="center">
+				<img src="img/history04.png">
+				<h3>Today</h3>
+			</div>
+			<ul>
+				<li>JavaScript Engines are fast</li>
+				<li>Libraries have improved</li>
+				<li>But  is still document based</li>
+			</ul>
+			<span class="notes">
+				300 fold increase in javascript execution.
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>What is AngularJS?</h2>
+			<ul>
+				<li>Extends basic HTML using JavaScript</li>
+				<li>Simple JavaScript Library</li>
+				<li>25kB Minified (Same size as jQuery)</li>
+				<li>Open Source (MIT)</li>
+				<li>Funded by Google</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h2>Framework VS Library</h2>
+			<dl>
+				<dt>Framework</dt>
+				<dd>Gives you Architecture / Structure that you should follow</dd>
+				<dt>Library</dt>
+				<dd>Patch it into your existing architecture to get extra functionality</dd>
+			</dl>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Frameworks</th>
+						<th>Libraries</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="http://emberjs.com/">Ember</a></td>
+						<td><a href="http://backbonejs.org/">Backbone</a></td>
+					</tr>
+					<tr>
+						<td><a href="http://angularjs.org/">AngularJS</a></td>
+						<td><a href="http://knockoutjs.com/">Knockout</a></td>
+					</tr>
+					<tr>
+						<td><a href="http://batmanjs.org/">Batman</a></td>
+						<td><a href="http://spinejs.com/">Spine</a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.sencha.com/products/extjs/">Sencha Ext JS</td>
+						<td><a href="http://canjs.us/">CanJS</a></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="http://jquery.com/">jQuery</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="slide">
+			<div style="margin-top: 200px" class="center">
+				<p>If Browsers Worked Better</p>
+				<h2>jQuery Wouldn't Exist</h2>
+			</div>
+			<span class="notes">
+				jQuery is a patch on the Browsers to unify them and make working with the DOM bearible.
+			</span>
+		</div>
+		
+		<div class="slide">
+			<h2>Installation</h2>
+			<ol>
+				<li>Download AngularJS (<a href="http://angularjs.org">http://angularjs.org/</a>)</li>
+				<li>Include the AngularJS Script</li>
+				<li>Add the 'ng-app' attribute</li>
+			</ol>
+
+<fieldset>
+	<legend>HTML</legend>
+	<pre class="language-markup" ng-non-bindable><code>&lt;!doctype html>
+&lt;html lang="en" ng-app>
+	&lt;head>
+		&lt;script src="js/angular.min.js">&lt;/script>
+	&lt;/head>
+	&lt;body>
+	&lt;/body>
+&lt;/html></code></pre>
+</fieldset>
+		</div>
+		
+		<div class="slide">
+			<div ng-controller="SlideCtrl">
+				<h2>Simple Example</h2>
+<fieldset>
+	<legend>HTML</legend>
+	<pre class="language-markup" ng-non-bindable><code>&lt;!doctype html>
+&lt;html lang="en" ng-app>
+	&lt;head>
+		&lt;script src="js/angular.min.js">&lt;/script>
+	&lt;/head>
+	&lt;body>
+		&lt;input type="text" ng-model="name">
+		&lt;p ng-bind="name">&lt;/p>
+		{{ name }}
+	&lt;/body>
+&lt;/html></code></pre>
+</fieldset>
+
+<fieldset>
+	<legend>Output</legend>
+	<input type="text" ng-model="name">
+	<p ng-bind="name"></p>
+	{{ name }}
+</fieldset>
+			</div>
+		</div>
+		
+		<div class="slide">
+			<h2>Directives</h2>
+			<ul>
+				<li>Attribute, Class, Comment, or Element</li>
+				<li>Sprinkled in your DOM</li>
+				<li>Extend built in behaviour</li>
+				<li>Add custom behaviour</li>
+				<li>Transform the DOM</li>
+				<li>Angular comes with a built set of directives<br>Usually prefixed with 'ng'</li>
+				<li>Define your own directive to add custom behaviour</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h2>Directives</h2>
+			<p>Directives can be invoked in many ways:</p>
+			<h3>Attribute</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span my-directive>&lt;/span></code></pre>
+			<h3>Class</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span class="my-directive">&lt;/span></code></pre>
+			<h3>Comment</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;!-- directive: my-directive --></code></pre>
+			<h3>Element</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;my-directive>&lt;/my-directive></code></pre>
+		</div>
+		
+		<div class="slide">
+			<h2>Directives</h2>
+			<p>Directives can be invoked in many ways:</p>
+			<h3>Attribute</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span ng-bind="name">&lt;/span></code></pre>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span ng_bind="name">&lt;/span></code></pre>
+			<h3>Attribute Namespace</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span ng:bind="name">&lt;/span></code></pre>
+			<h3>Attribute Prefix</h3>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span data-ng-bind="name">&lt;/span></code></pre>
+			<pre class="language-markup" ng-non-bindable><code>&lt;span x-ng-bind="name">&lt;/span></code></pre>
+		</div>
+		
+		<div class="slide">
+			<h2>'ng-app' Directive</h2>
+			<p>Starts Angular</p>
+			<p>Defines Angular Boundary</p>
+			<p>Directives and Expressions will only be processed inside a 'ng-app' Directive</p>
+			<p>Gives you the freedom to choose:</p>
+			<ul>
+				<li>Entire Page</li>
+				<li>Only Portion of Page</li>
+				<li>Multiple 'ng-app' Directives on the Same Page</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h2>DOM Templates VS String Templates</h2>
+			
+			<dl>
+				<dt>DOM Templates</dt>
+				<dd>Bindings and Control Flow (each, if, else, etc) go into the DOM</dd>
+			</dl>
+			<dl>
+				<dt>String Templates</dt>
+				<dd>Build up a string and inject it into the DOM. When values change rebuild string and inject it again.</dd>
+			</dl>
+		</div>
+		
+		<div class="slide">
+			<h2>Real Example</h2>
+			<div class="center">
+				<a href="example.html" target="_blank">Open Example</a>
+			</div>
+		</div>
+		
+		<div class="slide">
+			<div class="center">
+				<h2>AngularJS is a</h2>
+				<h3>HTML Compiler</h3>
+			</div>
+		</div>
+		
+		<div class="controls">
+			<a ng-click="previous()">Previous</a>
+			{{ current }} / {{ count }}
+			<a ng-click="next()">Next</a>
+		</div>
+		
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="lib/prism/prism.js"></script>
+		<script type="text/javascript" src="js/slidedeck.js"></script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<!-- Title -->
+		<title>Employee Directory - Dunder Mifflin</title>
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/example.css" />
+	</head>
+	<body>
+	
+		<div class="container" ng-controller="DirectoryController">
+			<h1>Employee Directory <small>Dunder Mifflin</small></h1>
+			
+			<div class="directory">
+				<ul class="nav">
+					<li ng-repeat="employee in employees | orderBy:'lastName'" ng-class="{ active: isSelected(employee) }" ng-click="select(employee)">
+						<img class="img-employee" ng-src="data/{{ employee.id }}.jpg">
+						<h5>{{ employee.firstName }} {{ employee.lastName }}</h5>
+						<div>{{ employee.title }}</div>
+					</li>
+				</ul>
+			</div>
+			
+			<form name="form" ng-submit="save()">
+				<div class="row">
+					<div class="span2">
+						<img class="img-polaroid" ng-src="data/{{ selected.id }}.jpg">
+					</div>
+					<div class="span3">
+						<div class="control-group">
+							<label class="control-label">First Name:</label>
+							<div class="controls">
+								<input type="text" ng-model="selected.firstName" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Last Name:</label>
+							<div class="controls">
+								<input type="text" ng-model="selected.lastName" required ng-minlength="5">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Hired:</label>
+							<div class="controls">
+								{{ selected.hireDate | date }}
+							</div>
+						</div>
+					</div>
+					<div class="span3">
+						<div class="control-group">
+							<label class="control-label">Title:</label>
+							<div class="controls">
+								<input type="text" ng-model="selected.title" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Branch:</label>
+							<div class="controls">
+								<select ng-model="selected.branch" ng-options="o.label as o.label for o in branches" required></select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Department:</label>
+							<div class="controls">
+								<select ng-model="selected.department" ng-options="o.label as o.label for o in departments" required></select>
+							</div>
+						</div>
+					</div>
+					<div class="span3">
+						<div class="control-group">
+							<label class="control-label">Office Phone:</label>
+							<div class="controls">
+								<input type="tel" ng-model="selected.officePhone">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Cell Phone:</label>
+							<div class="controls">
+								<input type="tel" ng-model="selected.cellPhone">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Email:</label>
+							<div class="controls">
+								<input type="email" ng-model="selected.email">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-primary pull-right">Save</button>
+				</div>
+			</form>
+		</div>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/example-completed.js"></script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+.directory {
+	overflow-y: scroll;
+	height: 200px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.directory .nav li {
+	height: 40px;
+	margin: 0px;
+	padding: 5px;
+	cursor: pointer;
+}
+.directory .nav li:hover {
+	background-color: #eee;
+}
+.directory .nav li:active,
+.directory .nav li.active {
+	background-color: #08C;
+	color: #fff;
+}
+.directory .nav h5 {
+	margin: 0px;
+}
+.directory .nav img {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 6px;
+}
