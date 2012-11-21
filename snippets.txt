@@ -1,0 +1,112 @@
+#### Initial ####
+
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<!-- Title -->
+		<title>Employee Directory - Dunder Mifflin</title>
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/example.css" />
+	</head>
+	<body>
+	
+		<!-- Scripts -->
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/example-completed.js"></script>
+	</body>
+</html>
+
+
+#### List
+
+<div class="container">
+	<h1>Employee Directory <small>Dunder Mifflin</small></h1>
+
+	<div class="directory">
+		<ul class="nav">
+			<li>
+				<img class="img-employee" src="data/1.jpg">
+				<h5>First Last</h5>
+				<div>Title</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+#### Form
+
+<form name="form">
+	<div class="row">
+		<div class="span2">
+			<img class="img-polaroid" src="data/1.jpg">
+		</div>
+		<div class="span3">
+			<div class="control-group">
+				<label class="control-label">First Name:</label>
+				<div class="controls">
+					<input type="text">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Last Name:</label>
+				<div class="controls">
+					<input type="text">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Hired:</label>
+				<div class="controls">
+					Oct 6, 2012
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="control-group">
+				<label class="control-label">Title:</label>
+				<div class="controls">
+					<input type="text">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Branch:</label>
+				<div class="controls">
+					<select></select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Department:</label>
+				<div class="controls">
+					<select></select>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="control-group">
+				<label class="control-label">Office Phone:</label>
+				<div class="controls">
+					<input type="tel">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Cell Phone:</label>
+				<div class="controls">
+					<input type="tel">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Email:</label>
+				<div class="controls">
+					<input type="email">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-actions">
+		<button class="btn btn-primary pull-right">Save</button>
+	</div>
+</form>
